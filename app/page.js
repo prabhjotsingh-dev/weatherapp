@@ -10,7 +10,7 @@ export default function Home({ searchParams }) {
   return (
     <>
       <nav className="flex items-center justify-between p-2 bg-white border-2 pfont-serif md:px-10 bg-transparent">
-        <div className='flex gap-1 md:flex-col bg-transparent'>
+        <div className='flex gap-1 flex-row bg-transparent'>
           <Image src="/weather.png" alt="Weather" width={30} height={30} />
           <h1 className="text-xl font-bold text-gray-800">Weather</h1>
         </div>
