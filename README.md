@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WeatherApp
 
-## Getting Started
+A modern weather dashboard built with Next.js 14 and Tailwind CSS. The app fetches live current conditions and hourly forecasts from the Meteosource API via RapidAPI and displays them in a clean, mobile-friendly UI.
 
-First, run the development server:
+## Key Features
+
+- Search weather by city name
+- Current weather summary with temperature, description, clouds, wind speed, humidity, and visibility
+- Hourly forecast for today and tomorrow
+- Uses dynamic query routing with `?city=` search parameter
+- Responsive layout with Next.js server components and Tailwind styling
+
+## How It Works
+
+- `app/page.js` reads `searchParams.city` from the URL
+- Default city is `gurdaspur` if no city is provided
+- `components/data.js` fetches current weather data from Meteosource
+- `components/hourlydata.js` fetches hourly forecast data
+- `components/inputbox.js` updates the URL query to request a new city
+- Weather icons are loaded from `public/bigicon_2`
+
+## Stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- RapidAPI Meteosource Weather API
+
+## Setup
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open in browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Search for a city using the input box and press Enter or change the URL to:
 
-## Learn More
+```text
+http://localhost:3000/?city=London
+```
 
-To learn more about Next.js, take a look at the following resources:
+## File Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.js` - main page layout and city routing logic
+- `app/layout.js` - global HTML layout and metadata
+- `components/inputbox.js` - search input component
+- `components/data.js` - current weather fetch and display
+- `components/hourlydata.js` - hourly forecast fetch and display
+- `public/bigicon_2/` - weather icon assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is provided as-is. Feel free to adapt it for your own use.
